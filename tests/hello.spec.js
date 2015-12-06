@@ -1,6 +1,7 @@
 /* global describe:false, beforeEach:false, afterEach:false, it:false, expect:false, sinon:false */
 
-import helloComponent from '../src/hello';
+// require hello (ignore module)
+import hello from '../src/hello';
 
 (function () {
     'use strict';
@@ -8,18 +9,28 @@ import helloComponent from '../src/hello';
     describe('hello', function () {
         beforeEach(function() {
             document.body.innerHTML = '<span id="hello"></span>';
-            $(document).ready(function() {
-                helloComponent($('#hello'));
-            });
         });
 
         afterEach(function() {
             document.body.innerHTML = '';
         });
 
-        it('should contains message \'hello\'', function () {
-            var h3Elem = $('#hello > h3');
-            expect(h3Elem.text()).to.equal('hello');
+        it('should append hello message as h3', function () {
+            // call hello
+            hello($('#hello'));
+
+            var h3Elem = $('#hello > h3')[0];
+            expect(h3Elem).to.ok;
+            expect(h3Elem.outerHTML).to.equal('<h3>hello</h3>');
+        });
+
+        it('should call as jQuery plugin', function () {
+            // call hello as jQuery plugin
+            $('#hello').hello();
+
+            var h3Elem = $('#hello > h3')[0];
+            expect(h3Elem).to.ok;
+            expect(h3Elem.outerHTML).to.equal('<h3>hello</h3>');
         });
     });
 })();

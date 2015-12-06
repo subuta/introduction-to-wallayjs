@@ -15,23 +15,26 @@
   "author": "@subuta",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^6.1.18",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
+    "browser-sync": "^2.10.0",
     "chai": "^3.4.1",
     "chai-jquery": "^2.0.0",
     "gulp": "^3.9.0",
-    "gulp-riot": "^0.4.2",
-    "jquery": "^2.1.4",
-    "lodash": "^3.10.1",
+    "gulp-babel": "^6.1.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-loader": "^1.1.2",
+    "gulp-util": "^3.0.7",
+    "gulp-webpack": "^1.5.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0",
     "wallaby-webpack": "0.0.10",
     "webpack": "^1.12.9"
   },
   "dependencies": {
-    "babel": "^6.1.18",
-    "browser-sync": "^2.10.0",
-    "riot": "^2.3.11"
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1"
   }
 }

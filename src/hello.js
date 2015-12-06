@@ -13,4 +13,12 @@ var factory = function(element) {
     return new HelloComponent(element);
 };
 
+// export hello as jQuery plugin.
+(function ( $ ) {
+    $.fn.hello = function() {
+        return factory(this);
+    };
+}( jQuery ));
+
+// also export hello as es6 module.
 export default factory;
