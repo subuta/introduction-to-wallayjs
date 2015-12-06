@@ -7,7 +7,7 @@ class HelloComponent {
     constructor(element) {
         $(element).addClass('l-hello-console');
         $(element).addClass('l-hello-centered');
-        $(element).append('<span id="console-prefix">$&nbsp;</span><span>hello</span>');
+        $(element).append('<span id="console-prefix">$&nbsp;</span><span>hello&nbsp;wallaby.js</span>');
     }
 }
 

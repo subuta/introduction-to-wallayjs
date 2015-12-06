@@ -31,7 +31,7 @@ import hello from '../src/hello';
 
             var wrapperElem = $('#wrapper > span');
             expect(wrapperElem).to.ok;
-            expect(escape(wrapperElem.text())).to.equal('%24%A0hello');
+            expect(escape(wrapperElem.text())).to.equal('%24%A0hello%A0wallaby.js');
         });
 
         it('should call as jQuery plugin', function () {
@@ -40,7 +40,7 @@ import hello from '../src/hello';
 
             var wrapperElem = $('#wrapper > span');
             expect(wrapperElem).to.ok;
-            expect(escape(wrapperElem.text())).to.equal('%24%A0hello');
+            expect(escape(wrapperElem.text())).to.equal('%24%A0hello%A0wallaby.js');
         });
     });
 })();
