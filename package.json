@@ -4,7 +4,8 @@
   "description": "introduction to wallabyjs by @subuta",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "serve": "gulp serve"
   },
   "keywords": [
     "wallabyjs",
