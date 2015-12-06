@@ -5,20 +5,30 @@
     <title>Document</title>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="scripts/hello.js"></script>
+    <script src="vendor/hello.js"></script>
+
+    <!-- for better font :) -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="vendor/hello.css">
 
     <script>
         $(document).ready(function() {
-            $('#hello').hello();
+            $('#console').hello();
         });
     </script>
 
     <style>
-
+        html, body{
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-<div id="hello">
-</div>
+
+<!-- instantiate hello using this element -->
+<div id="console"></div>
+
 </body>
 </html>

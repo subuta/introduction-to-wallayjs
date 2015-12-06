@@ -1,0 +1,19 @@
+.l-hello-console {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.l-hello-console {
+    background-color: #000000;
+    padding: 8px;
+    color: #55FF55;
+    font-size: 32px;
+    font-family: 'Source Code Pro', 'Lucida Grande', sans-serif;
+}
+
+.l-hello-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

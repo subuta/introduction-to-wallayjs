@@ -51,12 +51,17 @@ gulp.task('scripts', function() {
     return webpack(false);
 });
 
+gulp.task('styles', function() {
+    return gulp.src('src/hello.css')
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('scripts:watch', ['scripts'], function(callback) {
     return webpack(true, callback);
 });
 
 // Watch scss AND html files, doing different things with each.
-gulp.task('serve', ['scripts:watch'], function () {
+gulp.task('serve', ['scripts:watch', 'styles'], function () {
 
     // Serve files from the root of this project
     browserSync.init({
@@ -64,7 +69,7 @@ gulp.task('serve', ['scripts:watch'], function () {
             baseDir: './example',
             routes: {
                 '/bower_components': 'bower_components',
-                '/scripts': 'dist'
+                '/vendor': 'dist'
             }
         }
     });
@@ -72,4 +77,4 @@ gulp.task('serve', ['scripts:watch'], function () {
     gulp.watch("./example/*.html").on("change", browserSync.reload);
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('default', ['scripts', 'styles']);

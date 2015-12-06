@@ -8,29 +8,39 @@ import hello from '../src/hello';
 
     describe('hello', function () {
         beforeEach(function() {
-            document.body.innerHTML = '<span id="hello"></span>';
+            document.body.innerHTML = '<div id="wrapper"></div>';
         });
 
         afterEach(function() {
             document.body.innerHTML = '';
         });
 
-        it('should append hello message as h3', function () {
+        it('should has console/centerized cass', function () {
             // call hello
-            hello($('#hello'));
+            hello($('#wrapper'));
 
-            var h3Elem = $('#hello > h3')[0];
-            expect(h3Elem).to.ok;
-            expect(h3Elem.outerHTML).to.equal('<h3>hello</h3>');
+            var wrapperElem = $('#wrapper');
+            expect(wrapperElem).to.ok;
+            expect(wrapperElem.hasClass('l-hello-console')).to.ok;
+            expect(wrapperElem.hasClass('l-hello-centered')).to.ok;
+        });
+
+        it('should append hello message as h1', function () {
+            // call hello
+            hello($('#wrapper'));
+
+            var wrapperElem = $('#wrapper > span');
+            expect(wrapperElem).to.ok;
+            expect(escape(wrapperElem.text())).to.equal('%24%A0hello');
         });
 
         it('should call as jQuery plugin', function () {
             // call hello as jQuery plugin
-            $('#hello').hello();
+            $('#wrapper').hello();
 
-            var h3Elem = $('#hello > h3')[0];
-            expect(h3Elem).to.ok;
-            expect(h3Elem.outerHTML).to.equal('<h3>hello</h3>');
+            var wrapperElem = $('#wrapper > span');
+            expect(wrapperElem).to.ok;
+            expect(escape(wrapperElem.text())).to.equal('%24%A0hello');
         });
     });
 })();

@@ -5,7 +5,9 @@ import $ from 'jquery';
 
 class HelloComponent {
     constructor(element) {
-        $(element).append('<h3>hello</h3>');
+        $(element).addClass('l-hello-console');
+        $(element).addClass('l-hello-centered');
+        $(element).append('<span id="console-prefix">$&nbsp;</span><span>hello</span>');
     }
 }
 
