@@ -10,11 +10,26 @@ function webpack(watch, callback) {
 
     var webpackOptions = {
         watch: watch,
+
+        resolve: {
+            root: [path.resolve(__dirname, 'bower_components')]
+        },
+
+        externals: {
+            "jquery": "jQuery"
+        },
+
         module: {
             loaders: [
                 {test: /\.js$/, exclude: /node_modules|bower_components/, loader: 'babel?presets[]=es2015'}
             ]
         },
+
+        plugins: [
+            new $webpack.ResolverPlugin(
+                new $webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+            )
+        ],
 
         output: {
             filename: 'hello.js',

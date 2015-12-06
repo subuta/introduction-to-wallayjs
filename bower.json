@@ -1,0 +1,30 @@
+{
+  "name": "introduction-to-wallabyjs",
+  "description": "introduction to wallabyjs by @subuta",
+  "main": "dist/hello.js",
+  "authors": [
+    "@subuta"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "wallabyjs",
+    "riot",
+    "gulp",
+    "mocha"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "homepage": "https://github.com/subuta/introduction-to-wallayjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "typed.js": "~1.1.1"
+  }
+}

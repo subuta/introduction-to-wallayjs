@@ -1,6 +1,7 @@
 var path = require('path');
 var babel = require('babel-core');
 var wallabyWebpack = require('wallaby-webpack');
+var $webpack = require('webpack');
 var sinon = require('sinon');
 var chai = require('chai');
 
@@ -8,8 +9,18 @@ module.exports = function(wallaby) {
 
     var webpackPostprocessor = wallabyWebpack({
         resolve: {
-            modulesDirectories: ['bower_components']
-        }
+            root: [path.resolve(__dirname, 'bower_components')]
+        },
+
+        externals: {
+            "jquery": "jQuery"
+        },
+
+        plugins: [
+            new $webpack.ResolverPlugin(
+                new $webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+            )
+        ]
     });
 
     return {

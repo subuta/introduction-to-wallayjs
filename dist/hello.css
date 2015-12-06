@@ -2,9 +2,7 @@
     margin: 0;
     height: 100%;
     width: 100%;
-}
 
-.l-hello-console {
     background-color: #000000;
     padding: 8px;
     color: #55FF55;
@@ -16,4 +14,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#hello-message {
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
