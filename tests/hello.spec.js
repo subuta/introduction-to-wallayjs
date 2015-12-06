@@ -1,6 +1,6 @@
 /* global describe:false, beforeEach:false, afterEach:false, it:false, expect:false, sinon:false */
 
-// require hello
+// require hello (ignore module)
 import hello from '../src/hello';
 
 (function () {
@@ -28,6 +28,15 @@ import hello from '../src/hello';
         it('should append hello message as h1', function () {
             // call hello
             hello($('#wrapper'));
+
+            var wrapperElem = $('#wrapper > span');
+            expect(wrapperElem).to.ok;
+            expect(escape(wrapperElem.text())).to.equal('%24%A0hello');
+        });
+
+        it('should call as jQuery plugin', function () {
+            // call hello as jQuery plugin
+            $('#wrapper').hello();
 
             var wrapperElem = $('#wrapper > span');
             expect(wrapperElem).to.ok;
