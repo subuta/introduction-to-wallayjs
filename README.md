@@ -1,6 +1,8 @@
 # Introduction To Wallayjs
 An introduction to wallaby.js by @subuta
 
+[live example](https://jsbin.com/fulohiyoqa/edit?html,output)
+
 # What is this?
 - 7th installment for [Goodpatch Advent Calendar 2015](http://qiita.com/advent-calendar/2015/goodpatch)
 - Simple sample Javascript library was created using
